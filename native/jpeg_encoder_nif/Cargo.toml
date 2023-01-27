@@ -1,7 +1,7 @@
 [package]
 name = "jpeg_encoder_nif"
-version = "0.1.0"
-authors = []
+version = "0.2.0"
+authors = ["Håvard Lindset"]
 edition = "2018"
 rust-version = "1.60.0"
 
@@ -11,13 +11,5 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-rustler = "0.22.2"
+rustler = "0.27.0"
 jpeg-encoder = "0.5.1"
-# [dev-dependencies]
-# image = "0.23"
-# resvg = "0.19.0"
-# usvg = "0.19.0"
-# tiny-skia = "0.6.1"
-# quircs = "0.10.0"
-# [profile.test]
-# opt-level = 3
