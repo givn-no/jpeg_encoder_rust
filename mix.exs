@@ -1,8 +1,8 @@
 defmodule JpegEncoderRust.MixProject do
   use Mix.Project
 
-  @source_url "https://github.com/hooplab/jpeg_encoder_rust"
-  @version "0.2.0"
+  @source_url "https://github.com/givn-no/jpeg_encoder_rust"
+  @version "0.3.0"
 
   def project do
     [
