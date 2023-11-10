@@ -21,7 +21,8 @@ defmodule JpegEncoderRust do
     base_url: "#{github_url}/releases/download/v#{version}",
     force_build: System.get_env("JPEG_ENCODER_RUST_BUILD") in ["1", "true"],
     version: version,
-    targets: targets
+    targets: targets,
+    nif_versions: ["2.14", "2.15", "2.16"]
 
   def encode(_data, _width, _height, _quality) do
     :erlang.nif_error(:nif_not_loaded)
