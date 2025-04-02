@@ -10,7 +10,8 @@ defmodule JpegEncoderRust do
     force_build: System.get_env("JPEG_ENCODER_RUST_BUILD") in ["1", "true"],
     targets:
       Enum.uniq(["aarch64-unknown-linux-musl" | RustlerPrecompiled.Config.default_targets()]),
-    version: version
+    version: version,
+    nif_versions: ["2.15", "2.16"]
 
   def encode(_data, _width, _height, _quality) do
     :erlang.nif_error(:nif_not_loaded)
