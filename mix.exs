@@ -2,7 +2,7 @@ defmodule JpegEncoderRust.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/givn-no/jpeg_encoder_rust"
-  @version "0.3.0"
+  @version "0.4.0"
 
   def project do
     [
@@ -32,18 +32,16 @@ defmodule JpegEncoderRust.MixProject do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
     [
       extra_applications: [:logger]
     ]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler_precompiled, "~> 0.6"},
-      {:rustler, "~> 0.30.0", optional: true}
+      {:rustler_precompiled, ">= 0.0.0"},
+      {:rustler, ">= 0.0.0", optional: true}
     ]
   end
 

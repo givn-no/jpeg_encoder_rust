@@ -30,4 +30,4 @@ fn encode(data: Vec<u8>, width: u16, height: u16, quality: u8) -> Result<Vec<u8>
     };
 }
 
-rustler::init!("Elixir.JpegEncoderRust", [encode]);
+rustler::init!("Elixir.JpegEncoderRust");
