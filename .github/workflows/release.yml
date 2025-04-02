@@ -65,12 +65,12 @@ jobs:
         id: build-crate
         uses: philss/rustler-precompiled-action@v1.1.4
         with:
-          project-name: qrcoderust_nif
+          project-name: jpeg_encoder_nif
           project-version: ${{ env.PROJECT_VERSION }}
           target: ${{ matrix.job.target }}
           nif-version: ${{ matrix.nif }}
           use-cross: ${{ matrix.job.use-cross }}
-          project-dir: "native/qrcoderust_nif"
+          project-dir: "native/jpeg_encoder_nif"
 
       - name: Artifact upload
         uses: actions/upload-artifact@v4
