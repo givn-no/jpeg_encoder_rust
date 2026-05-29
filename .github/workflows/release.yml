@@ -145,8 +145,8 @@ jobs:
 
       - name: Generate RustlerPrecompiled checksums
         env:
-          QRCODE_RUST_BUILD: "true"
-        run: mix rustler_precompiled.download QRCodeRust --all --print
+          JPEG_ENCODER_RUST_BUILD: "true"
+        run: mix rustler_precompiled.download JpegEncoderRust --all --print
 
       - name: Build Hex package
         run: mix hex.build

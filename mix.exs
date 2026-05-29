@@ -2,7 +2,7 @@ defmodule JpegEncoderRust.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/givn-no/jpeg_encoder_rust"
-  @version "0.4.1"
+  @version "0.4.2"
 
   def project do
     [
