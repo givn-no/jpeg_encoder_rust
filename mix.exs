@@ -2,7 +2,7 @@ defmodule JpegEncoderRust.MixProject do
   use Mix.Project
 
   @source_url "https://github.com/givn-no/jpeg_encoder_rust"
-  @version "0.4.0"
+  @version "0.4.1"
 
   def project do
     [
@@ -30,6 +30,11 @@ defmodule JpegEncoderRust.MixProject do
       links: %{"GitHub" => @source_url},
       licenses: ["MIT"]
     ]
+    |> maybe_put_organization()
+  end
+
+  defp maybe_put_organization(package) do
+    maybe_put_env(package, :organization, "HEX_ORGANIZATION")
   end
 
   def application do
@@ -46,9 +51,18 @@ defmodule JpegEncoderRust.MixProject do
   end
 
   defp hex do
-    [
-      api_url: System.get_env("HEX_API_URL"),
-      api_key: System.get_env("HEX_API_KEY")
-    ]
+    []
+    |> maybe_put_env(:api_url, "HEX_API_URL")
+    |> maybe_put_env(:api_key, "HEX_API_KEY")
+  end
+
+  defp maybe_put_env(config, key, env_var) do
+    case System.get_env(env_var) do
+      value when is_binary(value) and value != "" ->
+        Keyword.put(config, key, value)
+
+      _ ->
+        config
+    end
   end
 end
